@@ -1,0 +1,2 @@
+rootProject.name='Lawyer-App'
+include ':app'
