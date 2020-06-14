@@ -11,6 +11,18 @@ interface Dao {
     @Query("SELECT * from lawyers order by firstName ASC")
     fun getLawyers(): List<Lawyer>
 
+    @Query("SELECT * from lawyers where featured = 1 order by firstName ASC")
+    fun getFeaturedLawyers(): List<Lawyer>
+
+    @Query("SELECT * from lawyers where fav = 1 order by firstName ASC")
+    fun getFavLawyers(): List<Lawyer>
+
+    @Query("SELECT COUNT(featured) from lawyers where featured = 1 order by firstName ASC")
+    fun getFeaturedLawyerCount(): Int
+
+    @Query("SELECT COUNT(fav) from lawyers where fav = 1 order by firstName ASC")
+    fun getFavLawyerCount(): Int
+
     @Insert
     suspend fun insertLawyer(lawyer: Lawyer)
 

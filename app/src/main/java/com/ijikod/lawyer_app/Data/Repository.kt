@@ -1,6 +1,7 @@
 package com.ijikod.lawyer_app.Data
 
 import android.app.Application
+import android.util.Log
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.MutableLiveData
 import com.ijikod.lawyer_app.Data.Model.Lawyer
@@ -16,7 +17,12 @@ import kotlinx.coroutines.launch
 class Repository(val app : Application) {
 
 
-    val lawyersData = MutableLiveData<List<Lawyer>>()
+    val lawyersAllData = MutableLiveData<List<Lawyer>>()
+    val lawyersFavData = MutableLiveData<List<Lawyer>>()
+    val lawyersFeaturedData = MutableLiveData<List<Lawyer>>()
+    val lawyersFeaturedCount = MutableLiveData<Int>()
+    val lawyersFavCount = MutableLiveData<Int>()
+
     val dao = ModelDatabase.getDatabase(app).lawyerDao()
 
 
@@ -30,11 +36,53 @@ class Repository(val app : Application) {
             if (data.isEmpty()){
                 getLawyersFromFileAndSave()
             }else{
-                lawyersData.postValue(data)
+                getFeatureCount()
+                getFavCount()
+                getAllLawyerData()
+
+                getFeaturedData()
+                getAllLawyerData()
+                getFavData()
             }
         }
 
     }
+
+
+    fun getAllLawyerData(){
+        CoroutineScope(Dispatchers.IO).launch {
+            lawyersAllData.postValue(dao.getLawyers())
+        }
+    }
+
+
+    fun getFeaturedData(){
+        CoroutineScope(Dispatchers.IO).launch {
+            lawyersFeaturedData.postValue(dao.getFeaturedLawyers())
+        }
+    }
+
+
+    fun getFavData(){
+        CoroutineScope(Dispatchers.IO).launch {
+            lawyersFavData.postValue(dao.getFavLawyers())
+        }
+    }
+
+
+    fun getFeatureCount(){
+        CoroutineScope(Dispatchers.IO).launch {
+            lawyersFeaturedCount.postValue(dao.getFeaturedLawyerCount())
+        }
+    }
+
+    fun getFavCount(){
+        CoroutineScope(Dispatchers.IO).launch {
+            lawyersFavCount.postValue(dao.getFavLawyerCount())
+        }
+    }
+
+
 
 
 
@@ -42,11 +90,20 @@ class Repository(val app : Application) {
 
     @WorkerThread
     suspend fun getLawyersFromFileAndSave(){
+
         val lawyers = readDataFromCache()
         dao.deleteAll()
         dao.insertLawyers(lawyers)
 
-        lawyersData.postValue(dao.getLawyers())
+        getFeatureCount()
+        getFavCount()
+        getAllLawyerData()
+
+        getFeaturedData()
+        getAllLawyerData()
+        getFavData()
+
+        Log.d("getLawyersFromFile", " getting feature count")
     }
 
 

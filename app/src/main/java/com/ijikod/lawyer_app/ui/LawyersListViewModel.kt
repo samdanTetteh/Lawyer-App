@@ -10,7 +10,11 @@ class LawyersListViewModel(application: Application) : AndroidViewModel(applicat
 
     private val repo = Repository(application)
 
-    val lawyerData = repo.lawyersData
+    val lawyerData = repo.lawyersAllData
+    val numberOfFeaturedLawyers = repo.lawyersFeaturedCount
+    val numberOfFavLawyers = repo.lawyersFavCount
+    val featuredLawyers = repo.lawyersFeaturedData
+    val favLawyerData = repo.lawyersFavData
 
     val selectedLawyer = MutableLiveData<Lawyer>()
 

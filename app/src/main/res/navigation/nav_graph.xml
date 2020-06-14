@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
+    android:id="@+id/bottom_nav_graph.xml"
     app:startDestination="@id/homeFragment">
 
     <fragment
@@ -10,4 +10,24 @@
         android:name="com.ijikod.lawyer_app.ui.Fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.ijikod.lawyer_app.ui.Fragments.DateFragment"
+        android:label="fragment_calendar"
+        tools:layout="@layout/fragment_nav2" />
+    <fragment
+        android:id="@+id/starFragment"
+        android:name="com.ijikod.lawyer_app.ui.Fragments.StarFragment"
+        android:label="fragment_star"
+        tools:layout="@layout/fragment_star" />
+    <fragment
+        android:id="@+id/cashFragment"
+        android:name="com.ijikod.lawyer_app.ui.Fragments.CashFragment"
+        android:label="fragment_cash"
+        tools:layout="@layout/fragment_cash" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.ijikod.lawyer_app.ui.Fragments.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>
