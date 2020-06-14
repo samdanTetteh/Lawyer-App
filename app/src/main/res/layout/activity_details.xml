@@ -33,47 +33,16 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_margin="5dp">
+            android:layout_margin="5dp"
+            android:paddingBottom="20dp">
 
             <FrameLayout
                 android:orientation="vertical"
                 android:layout_height="match_parent"
                 android:layout_width="match_parent">
 
-                <View
-                    android:id="@+id/check_img"
-                    android:layout_width="28dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="right"
-                    android:elevation="1dp"
-                    android:layout_marginTop="0.8dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@mipmap/verified_icon"/>
-
-
-                <RelativeLayout
-                    android:id="@+id/consultation_img"
-                    android:layout_width="200dp"
-                    android:layout_height="28dp"
-                    android:layout_gravity="right"
-                    android:elevation="1dp"
-                    android:layout_marginRight="1.5dp"
-                    android:layout_marginTop="120dp"
-                    android:background="@drawable/ic_trial_session_banner">
-
-                    <TextView
-                        android:id="@+id/consultation_txt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/tab_text"
-                        android:layout_centerInParent="true"
-                        android:text="@string/_1st_free_consultation_available"/>
-
-                </RelativeLayout>
 
                 <RelativeLayout
                     android:id="@+id/view_holder"
@@ -105,6 +74,7 @@
                                 android:id="@+id/lawyer_img"
                                 android:layout_width="130dp"
                                 android:layout_height="130dp"
+                                android:contentDescription="@string/lawyer_picture"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
                                 tools:srcCompat="@tools:sample/avatars" />
@@ -138,7 +108,7 @@
                                 android:layout_marginEnd="13dp"
                                 android:layout_marginBottom="20dp"
                                 android:text="@string/per_hr_txt"
-                                android:textSize="18sp"
+                                android:textSize="14sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -148,9 +118,9 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="bottom"
                                 android:includeFontPadding="false"
-                                android:text="60.90"
+                                tools:text="60.90"
                                 android:textColor="@color/primaryDarkColor"
-                                android:textSize="30sp"
+                                android:textSize="25sp"
                                 android:lineSpacingExtra="0dp"
                                 app:layout_constraintBaseline_toBaselineOf= "@id/per_hr"
                                 app:layout_constraintBottom_toBottomOf="@+id/per_hr"
@@ -180,7 +150,7 @@
                                 android:textColor="@color/gray_txt"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
-                                android:text="Verified Background" />
+                                android:text="@string/verified_background_txt" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </androidx.cardview.widget.CardView>
@@ -234,6 +204,7 @@
                                         android:layout_marginStart="5dp"
                                         android:layout_marginTop="16dp"
                                         android:src="@drawable/ic_rating_colour"
+                                        android:contentDescription="@string/ranking_title"
                                         app:layout_constraintBottom_toBottomOf="@+id/ratings"
                                         app:layout_constraintEnd_toEndOf="@+id/rating_title"
                                         app:layout_constraintStart_toEndOf="@+id/ratings"
@@ -272,11 +243,11 @@
                                         android:id="@+id/imageView4"
                                         android:layout_width="10dp"
                                         android:layout_height="10dp"
-                                        android:layout_marginStart="3dp"
+                                        android:layout_marginStart="5dp"
                                         android:layout_marginTop="3dp"
+                                        android:contentDescription="@string/review_arrow"
                                         android:src="@drawable/ic_right_small_arrow"
                                         app:layout_constraintBottom_toBottomOf="@+id/reviews_title"
-                                        app:layout_constraintEnd_toEndOf="@+id/reviews_img"
                                         app:layout_constraintStart_toEndOf="@+id/reviews_title"
                                         app:layout_constraintTop_toTopOf="@+id/reviews_title" />
 
@@ -284,11 +255,10 @@
                                         android:id="@+id/reviews"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginStart="30dp"
                                         android:layout_marginTop="16dp"
                                         android:textColor="@color/primaryDarkColor"
                                         android:textSize="23sp"
-                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintStart_toStartOf="@+id/reviews_title"
                                         app:layout_constraintTop_toTopOf="parent"
                                         tools:text="12" />
 
@@ -296,11 +266,12 @@
                                         android:id="@+id/reviews_img"
                                         android:layout_width="30dp"
                                         android:layout_height="30dp"
-                                        android:layout_marginTop="16dp"
-                                        android:layout_marginEnd="35dp"
+                                        android:contentDescription="@string/reviews_title"
+                                        android:layout_marginStart="5dp"
                                         android:src="@drawable/ic_reviews_colour"
-                                        app:layout_constraintEnd_toEndOf="parent"
-                                        app:layout_constraintTop_toTopOf="parent" />
+                                        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+                                        app:layout_constraintStart_toEndOf="@+id/reviews"
+                                        app:layout_constraintTop_toTopOf="@+id/reviews" />
 
                                     <TextView
                                         android:id="@+id/reviews_title"
@@ -311,7 +282,8 @@
                                         android:textColor="@color/primaryDarkColor"
                                         android:textSize="14sp"
                                         app:layout_constraintBottom_toBottomOf="parent"
-                                        app:layout_constraintStart_toStartOf="@+id/reviews" />
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent" />
 
                                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -324,44 +296,58 @@
                                     android:background="@mipmap/thin_vert_line"/>
 
 
-                                <androidx.constraintlayout.widget.ConstraintLayout
+                                <RelativeLayout
                                     android:layout_width="0dp"
                                     android:layout_height="100dp"
                                     android:layout_weight="1">
 
-                                    <TextView
-                                        android:id="@+id/rankings"
+                                    <RelativeLayout
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginStart="18dp"
-                                        android:layout_marginTop="16dp"
-                                        android:textColor="@color/primaryDarkColor"
-                                        android:textSize="23sp"
-                                        app:layout_constraintStart_toStartOf="parent"
-                                        app:layout_constraintTop_toTopOf="parent"
-                                        tools:text="1/18" />
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="16dp">
 
-                                    <ImageView
-                                        android:id="@+id/ranking_img"
-                                        android:layout_width="30dp"
-                                        android:layout_height="30dp"
-                                        android:layout_marginEnd="30dp"
-                                        android:src="@drawable/ic_ranking_colour"
-                                        app:layout_constraintEnd_toEndOf="parent"
-                                        app:layout_constraintTop_toTopOf="@+id/rankings" />
 
-                                    <TextView
-                                        android:id="@+id/rankings_title"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginBottom="24dp"
-                                        android:text="@string/ranking_title"
-                                        android:textColor="@color/primaryDarkColor"
-                                        android:textSize="14sp"
-                                        app:layout_constraintBottom_toBottomOf="parent"
-                                        app:layout_constraintEnd_toEndOf="@+id/ranking_img"
-                                        app:layout_constraintStart_toStartOf="@+id/rankings" />
-                                </androidx.constraintlayout.widget.ConstraintLayout>
+                                        <TextView
+                                            android:id="@+id/rankings"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textColor="@color/primaryDarkColor"
+                                            android:textSize="23sp"
+                                            tools:text="1/18" />
+
+                                        <ImageView
+                                            android:id="@+id/ranking_img"
+                                            android:layout_width="30dp"
+                                            android:layout_height="30dp"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_toEndOf="@id/rankings"
+                                            android:contentDescription="@string/ranking_title"
+                                            android:src="@drawable/ic_ranking_colour" />
+
+
+                                        <TextView
+                                            android:id="@+id/rankings_title"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/ranking_img"
+                                            android:layout_alignParentStart="true"
+                                            android:layout_centerHorizontal="true"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="9dp"
+                                            android:text="@string/ranking_title"
+                                            android:textColor="@color/primaryDarkColor"
+                                            android:textSize="14sp" />
+
+
+                                    </RelativeLayout>
+
+
+
+
+
+
+                                </RelativeLayout>
 
                             </LinearLayout>
 
@@ -469,7 +455,7 @@
                                     app:layout_constraintStart_toStartOf="@id/description_title"
                                     app:layout_constraintTop_toBottomOf="@id/description_title"
                                     app:layout_constraintBottom_toTopOf="@id/view3"
-                                    android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" />
+                                    tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" />
 
                                 <View
                                     android:id="@+id/view3"
@@ -488,7 +474,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="16dp"
-                                    android:text="Another Info"
+                                    android:text="@string/another_info_title"
                                     android:textSize="16sp"
                                     app:layout_constraintStart_toStartOf="@+id/description"
                                     app:layout_constraintTop_toBottomOf="@id/view3" />
@@ -500,7 +486,7 @@
                                     android:layout_marginTop="8dp"
                                     android:layout_marginBottom="40dp"
                                     android:lineSpacingExtra="5dp"
-                                    android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                                    tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
                                     android:textColor="@color/gray_title"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="@+id/description"
@@ -515,9 +501,37 @@
                     </androidx.cardview.widget.CardView>
                 </RelativeLayout>
 
+                <View
+                    android:id="@+id/check_img"
+                    android:layout_width="28dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="0.8dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@mipmap/verified_icon"/>
 
 
 
+                <RelativeLayout
+                    android:id="@+id/consultation_img"
+                    android:layout_width="200dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="1.5dp"
+                    android:layout_marginTop="120dp"
+                    android:background="@drawable/ic_trial_session_banner">
+
+                    <TextView
+                        android:id="@+id/consultation_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/tab_text"
+                        android:layout_centerInParent="true"
+                        android:text="@string/_1st_free_consultation_available"/>
+
+                </RelativeLayout>
 
 
 

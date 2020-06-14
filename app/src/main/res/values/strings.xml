@@ -21,4 +21,8 @@
     <string name="description_txt">Description</string>
     <string name="schedule_lawyer_txt">Schedule Lawyer</string>
     <string name="_1st_free_consultation_available">1st Free Consultation Available</string>
+    <string name="review_arrow">review arrow</string>
+    <string name="lawyer_picture">Lawyer Picture</string>
+    <string name="verified_background_txt">Verified Background</string>
+    <string name="another_info_title">Another Info</string>
 </resources>

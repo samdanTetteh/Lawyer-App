@@ -37,6 +37,9 @@ class DetailsActivity : AppCompatActivity() {
             ratings.text = it.rating
             reviews.text = it.reviewCount
             rankings.text = it.ranking
+
+            description.text = it.description
+            another_info_txt.text = it.moreInfo
         }
 
 

@@ -26,7 +26,9 @@ data class Lawyer (
     val verified : String?,
     val memberSince: String?,
     val avgResponseTime: String?,
+    @field:Json(name = "Description")
     val description: String?,
+    @field:Json(name = "more_info")
     val moreInfo: String?,
     val avatar: String?
 ) : Parcelable
