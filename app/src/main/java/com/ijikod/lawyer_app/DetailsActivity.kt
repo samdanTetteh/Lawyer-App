@@ -1,19 +1,17 @@
 package com.ijikod.lawyer_app
 
+import android.graphics.Color
 import android.graphics.LinearGradient
 import android.graphics.Shader
+import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
+import android.text.TextPaint
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.ijikod.lawyer_app.Data.Model.Lawyer
 import com.ijikod.lawyer_app.Utilities.LAWYER
 import kotlinx.android.synthetic.main.activity_details.*
-import kotlinx.android.synthetic.main.activity_details.lawyer_img
-import kotlinx.android.synthetic.main.activity_details.lawyer_name_txt
-import kotlinx.android.synthetic.main.activity_details.rate_txt
-import kotlinx.android.synthetic.main.lawyer_list_item.*
 
 
 class DetailsActivity : AppCompatActivity() {
@@ -43,17 +41,17 @@ class DetailsActivity : AppCompatActivity() {
         }
 
 
+        val animDrawable = schedule_btn.background as AnimationDrawable
+        animDrawable.setExitFadeDuration(1000)
+        animDrawable.start()
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+        val paint: TextPaint = consultation_txt.getPaint()
+        val width: Float = paint.measureText(getString(R.string._1st_free_consultation_available))
 
 
-//        val textShader: Shader = LinearGradient(
-//            0, 0, width, textView.getTextSize(), intArrayOf(
-//                Color.parseColor("#F97C3C"),
-//                Color.parseColor("#FDB54E"),
-//                Color.parseColor("#64B678"),
-//                Color.parseColor("#478AEA"),
-//                Color.parseColor("#8446CC")
-//            ), null, Shader.TileMode.CLAMP
-//        )
-//        textView.getPaint().setShader(textShader)
+        val textShader: Shader = LinearGradient(0f,0f,
+             width, consultation_txt.getTextSize(),  ContextCompat.getColor(this,R.color.colorGradientStart), ContextCompat.getColor(this,R.color.colorGradientEnd), Shader.TileMode.CLAMP)
+        consultation_txt.getPaint().setShader(textShader)
     }
 }

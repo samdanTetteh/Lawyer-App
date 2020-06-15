@@ -10,4 +10,9 @@
     <color name="gray_txt">#C4C5C6</color>
     <color name="gray_bg">#FBFBFB</color>
     <color name="gray_title">#939597</color>
+
+
+    <color name="colorGradientStart">#3CED89</color>
+    <color name="colorGradientCenter">#a7f96c</color>
+    <color name="colorGradientEnd">#D7FD5F</color>
 </resources>

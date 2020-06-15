@@ -163,7 +163,7 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginRight="5dp"
                         app:cardElevation="0.5dp"
-                        android:layout_marginBottom="5dp"
+
                         android:layout_marginLeft="5dp">
 
 
@@ -499,6 +499,7 @@
 
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
+                    
                 </RelativeLayout>
 
                 <View
@@ -525,7 +526,7 @@
                         android:id="@+id/consultation_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="12sp"
+                        android:textSize="11sp"
                         android:textStyle="bold"
                         android:textColor="@color/tab_text"
                         android:layout_centerInParent="true"
@@ -551,7 +552,7 @@
                 android:textStyle="bold"
                 android:textAllCaps="true"
                 android:text="@string/schedule_lawyer_txt"
-                android:background="@drawable/ic_button_gradient"
+                android:background="@drawable/gradient_animation"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center"
                 android:layout_marginTop="-25dp"/>

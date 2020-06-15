@@ -7,15 +7,7 @@
     android:layout_height="wrap_content"
     android:layout_width="match_parent">
 
-    <View
-        android:id="@+id/check_img"
-        android:layout_width="22dp"
-        android:layout_height="25dp"
-        android:layout_gravity="right"
-        android:elevation="1dp"
-        android:layout_marginTop="0.8dp"
-        android:layout_marginRight="10dp"
-        android:background="@mipmap/verified_icon"/>
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -138,6 +130,15 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
     </RelativeLayout>
+
+    <View
+        android:id="@+id/check_img"
+        android:layout_width="22dp"
+        android:layout_height="25dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="0.8dp"
+        android:layout_marginRight="10dp"
+        android:background="@mipmap/verified_icon"/>
 </FrameLayout>
 
 
