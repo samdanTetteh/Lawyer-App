@@ -1,9 +1,13 @@
 package com.ijikod.lawyer_app
 
+import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
+import android.widget.TextView
+import androidx.appcompat.widget.Toolbar
+import androidx.core.content.res.ResourcesCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -27,6 +31,8 @@ class MainActivity : AppCompatActivity() {
 
         bottomNav.setupWithNavController(navController)
     }
+
+
 
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

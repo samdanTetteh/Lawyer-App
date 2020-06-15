@@ -10,14 +10,16 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:elevation="1dp">
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:fitsSystemWindows="true">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/tool_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:title="@string/details_activity_title"
+            app:titleTextColor="@color/primaryDarkColor"
             android:minHeight="?attr/actionBarSize"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
@@ -29,13 +31,15 @@
     <ScrollView
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="3dp"
+        android:background="@color/bg_off_white">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_margin="5dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginStart="2dp"
             android:paddingBottom="20dp">
 
             <FrameLayout
@@ -87,6 +91,7 @@
                                 android:layout_marginTop="30dp"
                                 android:textColor="@android:color/black"
                                 android:textSize="20sp"
+                                android:fontFamily="@font/blogger_sans_medium"
                                 app:layout_constraintStart_toEndOf="@+id/lawyer_img"
                                 app:layout_constraintTop_toTopOf="parent"
                                 tools:text="Name" />
@@ -98,6 +103,7 @@
                                 tools:text="Surname"
                                 android:textColor="@android:color/black"
                                 android:textSize="20sp"
+                                android:fontFamily="@font/blogger_sans_medium"
                                 app:layout_constraintStart_toStartOf="@+id/lawyer_name_txt"
                                 app:layout_constraintTop_toBottomOf="@+id/lawyer_name_txt" />
 
@@ -109,6 +115,7 @@
                                 android:layout_marginBottom="20dp"
                                 android:text="@string/per_hr_txt"
                                 android:textSize="14sp"
+                                android:fontFamily="@font/blogger_sans_light"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -119,6 +126,7 @@
                                 android:gravity="bottom"
                                 android:includeFontPadding="false"
                                 tools:text="60.90"
+                                android:fontFamily="@font/blogger_sans_medium"
                                 android:textColor="@color/primaryDarkColor"
                                 android:textSize="25sp"
                                 android:lineSpacingExtra="0dp"
@@ -135,6 +143,7 @@
                                 android:singleLine="true"
                                 android:textColor="@color/gray_txt"
                                 android:textSize="16sp"
+                                android:fontFamily="@font/blogger_sans_light"
                                 app:layout_constraintBottom_toBottomOf="@+id/rate_txt"
                                 app:layout_constraintEnd_toStartOf="@+id/rate_txt"
                                 app:layout_constraintStart_toStartOf="@+id/lawyer_surname_txt"
@@ -147,6 +156,7 @@
                                 android:layout_marginTop="5dp"
                                 android:layout_marginEnd="40dp"
                                 android:textSize="12sp"
+                                android:fontFamily="@font/blogger_sans_light"
                                 android:textColor="@color/gray_txt"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
@@ -162,8 +172,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginTop="5dp"
                         android:layout_marginRight="5dp"
-                        app:cardElevation="0.5dp"
-
+                        app:cardElevation="1dp"
                         android:layout_marginLeft="5dp">
 
 
@@ -192,6 +201,7 @@
                                         android:layout_marginBottom="10dp"
                                         android:textColor="@color/primaryDarkColor"
                                         android:textSize="23sp"
+                                        android:fontFamily="@font/blogger_sans"
                                         app:layout_constraintBottom_toTopOf="@+id/rating_title"
                                         app:layout_constraintStart_toStartOf="@+id/rating_title"
                                         app:layout_constraintTop_toTopOf="parent"
@@ -221,6 +231,7 @@
                                         android:text="@string/ratings_title"
                                         android:textColor="@color/primaryDarkColor"
                                         android:textSize="14sp"
+                                        android:fontFamily="@font/blogger_sans"
                                         app:layout_constraintBottom_toBottomOf="parent"
                                         app:layout_constraintEnd_toEndOf="parent"
                                         app:layout_constraintStart_toStartOf="parent" />
@@ -258,6 +269,7 @@
                                         android:layout_marginTop="16dp"
                                         android:textColor="@color/primaryDarkColor"
                                         android:textSize="23sp"
+                                        android:fontFamily="@font/blogger_sans"
                                         app:layout_constraintStart_toStartOf="@+id/reviews_title"
                                         app:layout_constraintTop_toTopOf="parent"
                                         tools:text="12" />
@@ -281,6 +293,7 @@
                                         android:text="@string/reviews_title"
                                         android:textColor="@color/primaryDarkColor"
                                         android:textSize="14sp"
+                                        android:fontFamily="@font/blogger_sans"
                                         app:layout_constraintBottom_toBottomOf="parent"
                                         app:layout_constraintEnd_toEndOf="parent"
                                         app:layout_constraintStart_toStartOf="parent" />
@@ -314,6 +327,7 @@
                                             android:layout_height="wrap_content"
                                             android:textColor="@color/primaryDarkColor"
                                             android:textSize="23sp"
+                                            android:fontFamily="@font/blogger_sans"
                                             tools:text="1/18" />
 
                                         <ImageView
@@ -334,6 +348,7 @@
                                             android:layout_alignParentStart="true"
                                             android:layout_centerHorizontal="true"
                                             android:layout_marginLeft="16dp"
+                                            android:fontFamily="@font/blogger_sans"
                                             android:layout_marginTop="9dp"
                                             android:text="@string/ranking_title"
                                             android:textColor="@color/primaryDarkColor"
@@ -385,6 +400,7 @@
                                     android:layout_marginBottom="16dp"
                                     android:textSize="13sp"
                                     android:gravity="right"
+                                    android:fontFamily="@font/blogger_sans_light"
                                     android:textColor="@color/gray_txt"
                                     android:text="@string/member_since_oct_2015"
                                     app:layout_constraintBottom_toBottomOf="parent"
@@ -401,6 +417,7 @@
                                     android:textColor="@color/gray_txt"
                                     android:layout_marginEnd="8dp"
                                     android:textSize="13sp"
+                                    android:fontFamily="@font/blogger_sans_light"
                                     android:layout_marginBottom="16dp"
                                     android:text="@string/avg_response_time_1_day"
                                     app:layout_constraintBottom_toBottomOf="parent"
@@ -428,6 +445,7 @@
                                     android:layout_marginTop="20dp"
                                     android:text="@string/description_txt"
                                     android:textSize="16sp"
+                                    android:fontFamily="@font/blogger_sans"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -451,6 +469,7 @@
                                     android:textColor="@color/gray_title"
                                     android:textSize="14sp"
                                     android:lineSpacingExtra="2dp"
+                                    android:fontFamily="@font/blogger_sans"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="@id/description_title"
                                     app:layout_constraintTop_toBottomOf="@id/description_title"
@@ -476,6 +495,7 @@
                                     android:layout_marginTop="16dp"
                                     android:text="@string/another_info_title"
                                     android:textSize="16sp"
+                                    android:fontFamily="@font/blogger_sans"
                                     app:layout_constraintStart_toStartOf="@+id/description"
                                     app:layout_constraintTop_toBottomOf="@id/view3" />
 
@@ -486,6 +506,7 @@
                                     android:layout_marginTop="8dp"
                                     android:layout_marginBottom="40dp"
                                     android:lineSpacingExtra="5dp"
+                                    android:fontFamily="@font/blogger_sans"
                                     tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
                                     android:textColor="@color/gray_title"
                                     app:layout_constraintBottom_toBottomOf="parent"
@@ -499,7 +520,7 @@
 
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
-                    
+
                 </RelativeLayout>
 
                 <View
@@ -516,7 +537,7 @@
                 <RelativeLayout
                     android:id="@+id/consultation_img"
                     android:layout_width="200dp"
-                    android:layout_height="28dp"
+                    android:layout_height="29dp"
                     android:layout_gravity="right"
                     android:layout_marginRight="1.5dp"
                     android:layout_marginTop="120dp"
@@ -526,10 +547,12 @@
                         android:id="@+id/consultation_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="11sp"
+                        android:textSize="12sp"
                         android:textStyle="bold"
+                        android:fontFamily="@font/blogger_sans"
                         android:textColor="@color/tab_text"
-                        android:layout_centerInParent="true"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginStart="17sp"
                         android:text="@string/_1st_free_consultation_available"/>
 
                 </RelativeLayout>
@@ -552,6 +575,7 @@
                 android:textStyle="bold"
                 android:textAllCaps="true"
                 android:text="@string/schedule_lawyer_txt"
+                android:fontFamily="@font/blogger_sans_medium"
                 android:background="@drawable/gradient_animation"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center"

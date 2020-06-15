@@ -15,4 +15,5 @@
     <color name="colorGradientStart">#3CED89</color>
     <color name="colorGradientCenter">#a7f96c</color>
     <color name="colorGradientEnd">#D7FD5F</color>
+    <color name="bg_off_white">#f4f4f4</color>
 </resources>
