@@ -32,7 +32,7 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" >
         <item name="android:fontFamily">@font/blogger_sans_medium</item>
         <item name="android:textColor">@color/primaryDarkColor</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">10sp</item>
     </style>
 
 
