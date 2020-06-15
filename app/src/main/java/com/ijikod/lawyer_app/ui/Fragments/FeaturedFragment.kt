@@ -2,23 +2,23 @@ package com.ijikod.lawyer_app.ui.Fragments
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ijikod.lawyer_app.Data.Model.Lawyer
 import com.ijikod.lawyer_app.DetailsActivity
-
 import com.ijikod.lawyer_app.R
 import com.ijikod.lawyer_app.Utilities.FRAGMENT_POSITION
+import com.ijikod.lawyer_app.Utilities.HeaderDecoration
 import com.ijikod.lawyer_app.Utilities.LAWYER
 import com.ijikod.lawyer_app.ui.Adapter
 import com.ijikod.lawyer_app.ui.LawyersListViewModel
-import java.util.*
+
 
 /**
  * A simple [Fragment] subclass.
@@ -44,8 +44,14 @@ class FeaturedFragment : Fragment() {
         val view  =  inflater.inflate(R.layout.fragment_featured, container, false)
 
         featuredRecycler = view.findViewById(R.id.featured_list)
-        featuredRecycler.isNestedScrollingEnabled = false
+        val header = LayoutInflater.from(requireContext()).inflate(R.layout.list_header, null)
+        val headerDecoration = HeaderDecoration(header, false
+            , 0.2f, 0f, 1)
 
+        val layoutManager: RecyclerView.LayoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        featuredRecycler.addItemDecoration(headerDecoration)
+        featuredRecycler.layoutManager = layoutManager
         val position = arguments?.getInt(FRAGMENT_POSITION)
 
         val listener = object : Adapter.LawyerClick{
@@ -78,9 +84,6 @@ class FeaturedFragment : Fragment() {
                 featuredRecycler.adapter = adapter
             })
         }
-
-
-
 
 
         return view
