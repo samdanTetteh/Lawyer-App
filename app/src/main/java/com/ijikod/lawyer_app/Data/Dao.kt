@@ -27,7 +27,10 @@ interface Dao {
     suspend fun insertLawyer(lawyer: Lawyer)
 
     @Insert
-    suspend fun insertLawyers(monsters: List<Lawyer>)
+    suspend fun insertLawyers(lawyers: List<Lawyer>)
+
+    @Insert
+    fun insertLawyersTest(lawyers: List<Lawyer>)
 
     @Query("DELETE from lawyers")
     suspend fun deleteAll()

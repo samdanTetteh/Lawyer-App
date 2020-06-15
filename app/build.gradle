@@ -63,6 +63,7 @@ dependencies {
     def retrofit2_version = "2.6.0"
     implementation "com.squareup.retrofit2:retrofit:$retrofit2_version"
     implementation "com.squareup.retrofit2:converter-moshi:$retrofit2_version"
+    implementation"com.squareup.retrofit2:converter-gson:$retrofit2_version"
 
     def coroutines_version = "1.2.1"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
@@ -80,6 +81,18 @@ dependencies {
     def navigation = "2.2.2"
     implementation "androidx.navigation:navigation-fragment-ktx:$navigation"
     implementation "androidx.navigation:navigation-ui-ktx:$navigation"
+
+
+    // Mockito
+    androidTestImplementation "org.mockito:mockito-core:2.7.22"
+    androidTestImplementation "org.mockito:mockito-android:2.25.0"
+    testImplementation group: 'org.mockito', name: 'mockito-inline', version: '2.9.0'
+    testImplementation('com.nhaarman:mockito-kotlin:1.5.0') {
+        exclude group: 'org.jetbrains.kotlin'
+        exclude group: 'org.mockito'
+    }
+
+    androidTestImplementation "androidx.arch.core:core-testing:2.0.0"
 
 
 }
