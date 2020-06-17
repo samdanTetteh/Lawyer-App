@@ -6,46 +6,44 @@ import android.graphics.Shader
 import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import android.text.TextPaint
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import com.bumptech.glide.Glide
 import com.ijikod.lawyer_app.Data.Model.Lawyer
 import com.ijikod.lawyer_app.Utilities.LAWYER
+import com.ijikod.lawyer_app.databinding.ActivityDetailsBinding
+import com.ijikod.lawyer_app.ui.LawyersListViewModel
 import kotlinx.android.synthetic.main.activity_details.*
 
 
 class DetailsActivity : AppCompatActivity() {
 
+    lateinit var viewModel : LawyersListViewModel
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_details)
-        setSupportActionBar(tool_bar)
-
+        val binding = DataBindingUtil.setContentView<ActivityDetailsBinding>(this, R.layout.activity_details)
+        setSupportActionBar(binding.toolBar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back)
 
-        intent.extras?.getParcelable<Lawyer>(LAWYER)?.let {
-            Glide.with(this).load(it.avatar).into(lawyer_img)
-            lawyer_name_txt.text = it.firstName
-            lawyer_surname_txt.text = it.lastName
-            speciality.text = it.speciality
-            rate_txt.text = it.rate
-            ratings.text = it.rating
-            reviews.text = it.reviewCount
-            rankings.text = it.ranking
 
-            description.text = it.description
-            another_info_txt.text = it.moreInfo
-        }
+        viewModel = ViewModelProviders.of(this).get(LawyersListViewModel::class.java)
+        binding.lifecycleOwner = this
+        binding.lawyerViewModel = viewModel
+        viewModel.getLiveData().value = intent.getParcelableExtra(LAWYER)
 
 
         val animDrawable = schedule_btn.background as AnimationDrawable
-        animDrawable.setExitFadeDuration(1000)
+        animDrawable.setExitFadeDuration(2000)
         animDrawable.start()
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+
         val paint: TextPaint = consultation_txt.getPaint()
         val width: Float = paint.measureText(getString(R.string._1st_free_consultation_available))
 

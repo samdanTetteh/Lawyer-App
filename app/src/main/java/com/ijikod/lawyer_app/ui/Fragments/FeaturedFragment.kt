@@ -61,7 +61,6 @@ class FeaturedFragment : Fragment() {
 
                 val detailsIntent = Intent(requireActivity(), DetailsActivity::class.java)
                 detailsIntent.putExtra(LAWYER, lawyer)
-
                 requireActivity().startActivity(detailsIntent)
             }
 
